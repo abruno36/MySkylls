@@ -43,33 +43,34 @@ export function Home() {
     //onChangeText - fica observando toda a vez que muda o valor
     return (
         <View style={styles.container}>
-        <Text style={styles.title}>
-            Welcome, Bruno
-        </Text>
+            
+            <Text style={styles.title}>
+                Welcome, Bruno
+            </Text>
 
-        <Text style={styles.greetings}>
-           { gretting } 
-        </Text>
+            <Text style={styles.greetings}>
+            { gretting } 
+            </Text>
 
-        <TextInput 
-        style={styles.input} 
-        placeholder="New skill"
-        placeholderTextColor="#555"
-        onChangeText={setNewSkill} /> 
+            <TextInput 
+            style={styles.input} 
+            placeholder="New skill"
+            placeholderTextColor="#555"
+            onChangeText={setNewSkill} /> 
 
-        <Button onPress={handleAddNewSkill}/>
+            <Button onPress={handleAddNewSkill}/>
 
-        <Text style={[styles.input, {marginVertical: 40, color: '#A370F7', fontWeight: 'bold'} ]}>
-            My Skills
-        </Text>
+            <Text style={[styles.input, {marginVertical: 40, color: '#A370F7', fontWeight: 'bold'} ]}>
+                My Skills
+            </Text>
 
-        <FlatList 
-            data={mySkills}
-            keyExtractor={item => item}
-            renderItem={({ item }) => (
-                <SkillCard skill={item}/>
-            )}
-        />
+            <FlatList 
+                data={mySkills}
+                keyExtractor={item => item}
+                renderItem={({ item }) => (
+                    <SkillCard skill={item}/>
+                )}
+            />
 
         </View>
     );

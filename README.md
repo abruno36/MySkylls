@@ -16,9 +16,7 @@
 >#################  ROCKETSEAT #### MOBILE: IOS ANDROID ####
 >
 npx react-native init myskills
->
 npx react-native run-android
->
 ou yarn run android 
 
 >

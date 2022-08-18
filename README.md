@@ -15,11 +15,11 @@
 >
 >#################  ROCKETSEAT #### MOBILE: IOS ANDROID ####
 >
-criar App: npx react-native init myskills
+criar App: **npx react-native init myskills**
 >
-Rodar App no Android: npx react-native run-android
+Rodar App no Android: **npx react-native run-android**
 >
-ou yarn run android
+ou **yarn run android**
 >
 HOOKS - IMUTABILIDADE - FLATLIST 
 

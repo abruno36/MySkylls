@@ -4,7 +4,7 @@
 >
 > **Objetivo:**     
 >
-> App que irá registrar os skills 
+> App que irá registrar os **skills**
 
 ---
 **Protótipo:** 
@@ -14,9 +14,12 @@
 > **Tecnologias:** REACT-NATIVE
 >
 >#################  ROCKETSEAT #### MOBILE: IOS ANDROID ####
->npx react-native init myskills
->npx react-native run-android
->ou yarn run android 
+>
+npx react-native init myskills
+>
+npx react-native run-android
+>
+ou yarn run android 
 
 >
 > ## Nível Criticidade

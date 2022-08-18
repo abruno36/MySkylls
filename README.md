@@ -4,10 +4,10 @@
 >
 > **Objetivo:**     
 >
-> Criar um app que irá registrar os skills 
+> App que irá registrar os skills 
 
 ---
-**Classe Dependente:** 
+**Protótipo:** 
 
 <img src="https://github.com/abruno36/MySkylls/blob/master/prototipo.png" alt="Protótipo"/>
 

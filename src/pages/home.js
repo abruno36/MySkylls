@@ -13,20 +13,42 @@ import { SkillCard } from "../components/SkillCard";
 
 export function Home() {
 
-    //IMUTABILIDADE
+    //IMUTABILIDADE - HOOKS
     //nweSkill - é o quem o estado / setNewSkill - é a função que atualiza o estado
     const [newSkill, setNewSkill] = useState('');
     const [mySkills, setMySkills] = useState([]);
+    const [gretting, setGretting] = useState('');
 
     function handleAddNewSkill(){
         setMySkills(oldState => [...oldState, newSkill]);
     }
+
+    //useEffect
+    useEffect(() => {
+        const currentHour = new Date().getHours() - 3;
+        console.log(currentHour);
+        //console.log(Date());
+        //const currentHour = 16;
+        if(currentHour < 12){
+            setGretting('Good Morning!');
+        }
+        else if(currentHour >=12 && currentHour < 18){
+            setGretting('Good Afternoon!');
+        }
+        else {
+            setGretting('Good Night!');
+        }
+    }, [])
  
     //onChangeText - fica observando toda a vez que muda o valor
     return (
         <View style={styles.container}>
         <Text style={styles.title}>
             Welcome, Bruno
+        </Text>
+
+        <Text style={styles.greetings}>
+           { gretting } 
         </Text>
 
         <TextInput 
@@ -37,7 +59,7 @@ export function Home() {
 
         <Button onPress={handleAddNewSkill}/>
 
-        <Text style={[styles.input, {marginVertical: 40} ]}>
+        <Text style={[styles.input, {marginVertical: 40, color: '#A370F7', fontWeight: 'bold'} ]}>
             My Skills
         </Text>
 
@@ -73,4 +95,7 @@ export function Home() {
         marginTop: 30,
         borderRadius: 7
     },
+    greetings: {
+        color: '#FFF'
+    }
     });

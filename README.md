@@ -9,7 +9,7 @@
 ---
 **Classe Dependente:** 
 
-<img src="https://github.com/abruno36/MySkylls/prototipo.png" alt="Arquitetura"/>
+<img src="https://github.com/abruno36/MySkylls/blob/master/prototipo.png" alt="Protótipo"/>
 
 > **Tecnologias:** REACT-NATIVE
 >

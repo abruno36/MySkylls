@@ -11,16 +11,32 @@ import {
 import { Button } from "../components/Button";
 import { SkillCard } from "../components/SkillCard";
 
+interface SkillData {
+    id: string;
+    name: string;
+}
+
 export function Home() {
 
     //IMUTABILIDADE - HOOKS
     //nweSkill - é o quem o estado / setNewSkill - é a função que atualiza o estado
     const [newSkill, setNewSkill] = useState('');
-    const [mySkills, setMySkills] = useState([]);
+    const [mySkills, setMySkills] = useState<SkillData[]>([]);
     const [gretting, setGretting] = useState('');
 
     function handleAddNewSkill(){
-        setMySkills(oldState => [...oldState, newSkill]);
+        const data = {
+            id: String(new Date().getTime()),
+            name: newSkill
+        }
+
+        setMySkills(oldState => [...oldState, data]);
+    }
+
+    function handleRemoveSkill(id: string){
+        setMySkills(oldState => oldState.filter(
+            skill => skill.id !== id
+        ))
     }
 
     //useEffect
@@ -58,7 +74,10 @@ export function Home() {
             placeholderTextColor="#555"
             onChangeText={setNewSkill} /> 
 
-            <Button onPress={handleAddNewSkill}/>
+            <Button 
+                title="Add"
+                onPress={handleAddNewSkill}
+            />
 
             <Text style={[styles.input, {marginVertical: 40, color: '#A370F7', fontWeight: 'bold'} ]}>
                 My Skills
@@ -66,9 +85,12 @@ export function Home() {
 
             <FlatList 
                 data={mySkills}
-                keyExtractor={item => item}
+                keyExtractor={item => item.id}
                 renderItem={({ item }) => (
-                    <SkillCard skill={item}/>
+                    <SkillCard 
+                    skill={item.name}
+                    onPress={() =>handleRemoveSkill(item.id)}
+                    />
                 )}
             />
 

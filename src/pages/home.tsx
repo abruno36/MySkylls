@@ -25,10 +25,13 @@ export function Home() {
     const [gretting, setGretting] = useState('');
 
     function handleAddNewSkill(){
+
         const data = {
             id: String(new Date().getTime()),
             name: newSkill
         }
+
+        //console.log("New Skill",data);
 
         setMySkills(oldState => [...oldState, data]);
     }
@@ -38,7 +41,6 @@ export function Home() {
             skill => skill.id !== id
         ))
     }
-
     //useEffect
     useEffect(() => {
         const currentHour = new Date().getHours() - 3;
